@@ -1,29 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect 
 from .models import shortlinksapp
 from rest_framework import generics
 from .serializers import shortlinksappSerializer
 
 
-class shortlinksappCreate(generics.CreateAPIView):
+
+class ShortlinksappCreate(generics.CreateAPIView):
     queryset = shortlinksapp.objects.all(),
-    serializer_class = shortlinksappSerializer
-
-
-class shortlinksappList(generics.ListAPIView):
-    queryset = shortlinksapp.objects.all()
     serializer_class = shortlinksappSerializer
     
 
-class shortlinksappDetail(generics.RetrieveAPIView):
+
+# class ShortlinksappList(generics.ListAPIView):
+#     queryset = shortlinksapp.objects.all()
+#     serializer_class = shortlinksappSerializer
+    
+
+# class ShortlinksappDetail(generics.RetrieveAPIView):
+#     queryset = shortlinksapp.objects.all()
+#     serializer_class = shortlinksappSerializer
+
+
+class ShortlinksappUpdate(generics.RetrieveUpdateAPIView):
     queryset = shortlinksapp.objects.all()
     serializer_class = shortlinksappSerializer
 
 
-class shortlinksappUpdate(generics.RetrieveUpdateAPIView):
-    queryset = shortlinksapp.objects.all()
-    serializer_class = shortlinksappSerializer
+# class ShortlinksappDelete(generics.RetrieveDestroyAPIView):
+#     queryset = shortlinksapp.objects.all()
+#     serializer_class = shortlinksappSerializer
 
 
-class shortlinksappDelete(generics.RetrieveDestroyAPIView):
-    queryset = shortlinksapp.objects.all()
-    serializer_class = shortlinksappSerializer
+
