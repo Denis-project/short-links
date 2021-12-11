@@ -24,4 +24,4 @@ class ShortlinksappSerializer(serializers.Serializer):
         instance.originalUrl('originalUrl', instance.originalUrl)
         instance.shortUrl('shortUrl', instance.shortUrl)
         instance.save()
-        return instance
+        return instance 
